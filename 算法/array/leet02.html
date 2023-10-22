@@ -1,0 +1,29 @@
+<script>
+    var isPalindrome = function(x){
+        if(x == 0){
+            return true;
+        }
+        if(x < 0){
+            return false;
+        }
+        if(x % 10 == 0){
+            return false;
+        }
+        var arr = []
+        var temp = x
+        while(temp >= 10){
+            arr.unshift(temp % 10)
+            temp = Math.floor(temp / 10)
+       }
+       arr.unshift(temp)
+       console.log(arr);
+       for(var i = 0; i < (arr.length - 1) / 2; i++){
+            if(arr[i] != arr[arr.length - i - 1]){
+                return false
+            }
+       }
+       
+       return true
+    }
+    console.log(isPalindrome(1001));
+</script>
