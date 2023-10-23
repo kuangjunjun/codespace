@@ -1,0 +1,37 @@
+<!-- <script>
+    var nums = [4,1,2,1,2]
+    var singleNumber = function(nums) {
+        var obj = {}
+        for(var i = 0; i < nums.length; i++){
+            if(obj[nums[i]] == undefined){
+                obj[nums[i]] = 1
+            }
+            else{
+                obj[nums[i]]++
+            }
+        }
+        for(var i = 0; i < nums.length; i++){
+            if(obj[nums[i]] == 1){
+                return nums[i]
+            }
+        }
+};
+console.log(singleNumber(nums));
+</script> -->
+
+<script>
+     var nums = [4,1,2,1,2]
+     var singleNumber = function(nums){
+        var array = []
+        for(var i = 0; i < nums.length; i++){
+            if(array.indexOf(nums[i]) == -1){
+                array.push(nums[i])
+            }
+            else{
+                array.splice(array.indexOf(nums[i]), 1)
+            }
+        }
+        return array[0]
+     }
+     console.log(singleNumber(nums));
+</script>
