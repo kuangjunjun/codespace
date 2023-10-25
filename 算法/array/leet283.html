@@ -1,0 +1,45 @@
+<script>
+   var nums = [0,0,1]
+//    var moveZeroes = function(nums) {
+//         // for(var i = 0; i < nums.length;i++){
+//         //         if(nums[i] != 0){
+//         //                 var n = i
+//         //                 break
+//         //         }
+//         // }
+//         // for(var i = 0; i < n; i++){
+//         //         nums.splice(0, 1)
+//         // }
+//         // for(var i = 0; i < n; i ++){
+//         //         nums.push(0)
+//         // }
+//         if(nums[0] == 0){
+//                 nums.push(0)
+//                 for(var i = 1; i < nums.length; i++){
+//                          if(nums[i] == 0){
+//                                 nums.splice(i, 1)
+//                                 nums.push(0)
+//                                 i--
+//                          }
+//                 }
+//                 nums.splice(0, 1)       
+//         }
+        
+//         return nums
+// };
+var nums = [0,1,0,3,12]
+var moveZeroes = function(nums){
+        let j = 0
+        for(let i = 0; i < nums.length; i++){
+                if( nums[i] !== 0){
+                        nums[j] = nums[i]
+                        j++
+                }
+        }
+        for(var i = j; i < nums.length; i++){
+                nums[i] = 0
+        }
+        return nums
+}
+console.log(moveZeroes(nums))
+</script>

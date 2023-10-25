@@ -1,0 +1,22 @@
+<script>
+    var nums = [1,2,1,3,2,5]
+    var singleNumber = function(nums) {
+        var obj = {}
+        for(var i = 0; i < nums.length; i++){
+            if(obj[nums[i]] == undefined){
+                obj[nums[i]] = 1
+            }
+            else{
+                obj[nums[i]]++
+            }
+        }
+        var array = []
+        for(var i = 0; i < nums.length; i++){
+            if(obj[nums[i]] == 1){
+                array.push(nums[i])
+            }
+        }
+        return array
+};
+console.log(singleNumber(nums));
+</script>

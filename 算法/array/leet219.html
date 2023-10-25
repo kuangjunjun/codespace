@@ -1,0 +1,31 @@
+<script>
+    var nums = [1,2,3,1], k = 3
+    var containsNearbyDuplicate = function(nums, k) {
+        var diffs = []
+        var temp = 0
+        for(var i = 0; i < nums.length; i++){
+            for(var j = i + 1; j < nums.length; j++){
+                if(nums[i] == nums[j]){
+                    temp = Math.abs(i - j)
+                    if(temp <= k){
+                        return true
+                    }
+                    diffs.push(temp)
+                }
+            }
+        }
+        var min = diffs[0]
+        for(var i = 1; i < diffs.length; i++){
+            if(diffs[i] < min){
+                min = diffs[i]
+            }
+        }
+        if(min <= k){
+            return true
+        }
+        else{
+            return false
+        }
+};
+console.log(containsNearbyDuplicate(nums, k));
+</script>
