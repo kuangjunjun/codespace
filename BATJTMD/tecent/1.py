@@ -40,8 +40,8 @@ print(get_response(prompt))
 # {
 #     title: "",
 #     selling_points: "",
-#        price_range: ,
-#  }
+
+# }
 
 {
   "title": "Factory Stock PVC Inflatable Frog Night Market Stall Hot Selling Glow-in-the-Dark Kids Water Toy",
