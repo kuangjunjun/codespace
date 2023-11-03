@@ -41,7 +41,7 @@ var str = 'abc'
 str += 1    //字符串加任何东西都是字符串
 var test = typeof (str) //'string'
 if (test.length == 6) {  // new String(test).length
-    test.sign == 'typeof的返回结果可能为String'
+    test.sign = 'typeof的返回结果可能为String'
     //new String(test).sign = 'typeof的返回结果可能为String'
     //delete
 }

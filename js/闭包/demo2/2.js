@@ -19,4 +19,5 @@ function addAll(b, c) {
     return a + result + d
 }
 
-addAll(3, 6)
+
+console.log(addAll(3, 6));

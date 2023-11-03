@@ -3,9 +3,9 @@ function bar() {
 }
 
 function foo() {
-    var myName = '龙龙'
+    var myName = '菌菌'
     bar()
 }
 
-var myName = '菌菌'
+var myName = '来颗奇趣蛋'
 foo()
