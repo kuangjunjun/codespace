@@ -19,8 +19,8 @@
 // console.log(b);
 
 let obj = {
-    name: '小花'
+    name: '菌菌'
 }
 let lw = obj
-obj.name = '小红'
+obj.name = '来颗奇趣蛋'
 console.log(lw.name);

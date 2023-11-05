@@ -13,9 +13,12 @@ function Car(color) {
     this.lang = '4900'
     this.weight = 1000
     this.color = color
+
 }
 
 let car1 = new Car('pink')   // 实例对象
 
 let car2 = new Car('green')
-car1.name = '玛莎' 
+console.log(car1);
+console.log(car2);
+//car1.name = '玛莎' 

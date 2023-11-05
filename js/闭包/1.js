@@ -1,18 +1,13 @@
 var arr = []
 
+// for (var i = 0; i < 10; i++){
+
 for (var i = 0; i < 10; i++){
+//     arr[i] = function () {
+//         console.log(i);
+//     }
+//  }
 
-    for (var i = 0; i < 10; i++){
-        arr[i] = function () {
-            console.log(i);
-        }
-    }
-
-//     (function () {
-//         arr[i] = function () {
-//            console.log(i);
-//        }
-    //    }) ()
     (function a(j) {
         arr[i] = function () {
             console.log(j);
