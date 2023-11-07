@@ -12,3 +12,4 @@ function Person() {
 
 let p = new Person()
 console.log(p.say());
+// console.log(p);

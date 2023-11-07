@@ -19,7 +19,7 @@ function Car(owner, color) {
 var car = new Car('浪哥', 'red')
 var car2 = new Car('但总', 'black')
 
-// Car.prototype.name = '红旗'
+ Car.prototype.name = '红旗'
 
 console.log(car);
 console.log(car2.name);
