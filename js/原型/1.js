@@ -5,11 +5,13 @@ Person.prototype.say = function () {
 }
 
 function Person() {
-    this.name = '肖总'
+    this.name = '来颗奇趣蛋'
     this.age = 18
     }
 
 
 let p = new Person()
+
 console.log(p.say());
-// console.log(p);
+
+console.log(p);

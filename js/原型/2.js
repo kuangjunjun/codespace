@@ -16,8 +16,8 @@ function Car(owner, color) {
     this.color = color
 }
 
-var car = new Car('浪哥', 'red')
-var car2 = new Car('但总', 'black')
+var car = new Car('菌菌', 'red')
+var car2 = new Car('来颗奇趣蛋', 'black')
 
  Car.prototype.name = '红旗'
 
