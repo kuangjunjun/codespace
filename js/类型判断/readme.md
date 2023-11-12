@@ -16,3 +16,5 @@
 5. 返回由三个字符串" [object "、 class和" ] "连接而成的字符串值。
 
 # Array.isArray(arr)
+
+obj.toString()
