@@ -1,12 +1,14 @@
 function foo() {
     console.log(this.a);
   }
-  var obj = {
-    a: 2,
-    foo: foo
-  }
-  var obj2 = {
-    a: 3,
+
+  
+var obj2 = {
+    a: '菌菌',
     obj: obj
-  }
-  obj2.obj.foo()
+}
+var obj = {
+  a: '来颗奇趣蛋',
+  func: foo
+}
+obj2.obj.func()

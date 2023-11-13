@@ -8,4 +8,5 @@ class SingleDog{
 
 const s1 = new SingleDog()
 const s2 = new SingleDog()
+
 console.log(s1 === s2);// false  不同的内存空间，值 也会不一定
