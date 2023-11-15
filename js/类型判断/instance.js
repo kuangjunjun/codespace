@@ -23,5 +23,5 @@ function test(obj) {
         return obj.name
     }
 }
-// test({name:'君君'})
-test(['君君'])
+console.log(test({name:'君君'}));
+// logtest(['君君'])

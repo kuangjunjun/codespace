@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form onsubmit="send()">
+        <div>
+        <label for="user">账号</label>
+        <input type="text" id="user">
+        </div>
+        <div>
+        <label for="password">密码</label>
+        <input type="text" id="password">
+        </div>
+        <button type="submit">提交</button>
+    </form> -->
+
+    <button id="btn">提交</button>
+
+    <script>
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', debounce(send, 1000))
+
+        function send(){
+            console.log('提交完成', e);
+        }
+
+        function debounce(fn, delay){
+            let timer;
+
+            return function(){
+                let args = arguments
+                let _this = this
+                if(timer)   clearTimeout(timer)
+                timer = setTimeout(function(){
+                    fn(...args)
+                }, delay)
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
