@@ -2,6 +2,8 @@
 @import "styles/hero.wxss";
 @import "styles/action.wxss";
 @import "styles/button.wxss";
+@import "styles/card.wxss";
+@import "styles/cover.wxss";
 
 page{
   background-color: #f8f8f8;
