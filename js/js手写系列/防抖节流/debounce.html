@@ -25,7 +25,7 @@
         btn.addEventListener('click', debounce(send, 1000))
 
         function send(){
-            console.log('提交完成', e);
+            console.log('提交完成');
         }
 
         function debounce(fn, delay){
@@ -36,7 +36,7 @@
                 let _this = this
                 if(timer)   clearTimeout(timer)
                 timer = setTimeout(function(){
-                    fn(...args)
+                    fn.call(_this, ...args)
                 }, delay)
             }
         }
