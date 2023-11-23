@@ -8,7 +8,7 @@
 2. Object.assign({}, x)
 3. concat
 4. slice
-5. 数组结构
+5. 数组解构
 6. arr.toReversed().reverse()
 
 
