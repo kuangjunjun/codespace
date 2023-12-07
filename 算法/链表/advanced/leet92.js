@@ -34,3 +34,10 @@ var reverseList = function (head) {
     }
     return pre
 }
+
+
+
+let head = {} // 1001
+
+let cur = head  // 1001
+cur = xxxx

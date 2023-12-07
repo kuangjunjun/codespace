@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "JavaScript You don't know",
+      "title": 1,
       "author": "况君豪"
     },
     {
@@ -14,11 +14,6 @@
       "title": "设计模式",
       "author": "江总",
       "id": 3
-    },
-    {
-      "title": "设计模式",
-      "author": "江总",
-      "id": 4
     }
   ],
   "comments": [
