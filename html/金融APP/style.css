@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #efefef;
+}
+
+.head{
+    display: flex;
+    margin-top: 51px;
+    padding: 0 22px;
+    justify-content: space-between;
+}
+.touxiang{
+    width: 36px;
+    height: 36px;
+    background: black;
+    border-radius: 50px;
+}
+.card-wrap{
+    margin-top: 28px;
+    padding: 0 21px;
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+}
+
+
+.jr__footer{
+    height: 83px;
+    /* border: 1px solid #000; */
+    width: 100%;
+    position: fixed;  /* 固定定位 */
+    bottom: 0;
+    background-color: #fff;;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+}
+
+.jr__footer ul{
+    display: flex;
+    height: 100%;
+}
+.jr__footer ul li{
+    flex: 1;
+    text-align: center;
+    line-height: 83px;
+}
+li .iconfont{
+    font-size: 30px;
+}

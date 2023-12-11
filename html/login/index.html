@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .login__head{
+            margin: 45px 0;
+            padding: 0 30px 0 0;
+            overflow: auto;
+        }
+        .back{
+            float: left;
+        }
+        .title{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #img1{
+            height: 40px;
+            width: 40px;
+        }
+        #img2{
+            height: 20px;
+            width: 20px;
+        }
+        .login__body{
+            margin: 100px 0;
+        }
+        .item{
+            margin-top: 30px;
+            display: flex;
+            padding: 0 40px;
+        }
+        input{
+            background-color: #ede9e9;
+            padding: 20px;
+            flex: 1;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+        button{
+            flex:1;
+            font-size: 20px;
+            padding: 20px;
+            border-radius: 100px;
+            background-color: #f44646;
+            color: #fff;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        .set{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2664aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="login__head">
+            <div class="back">
+                <img src="./左箭头.png" id="img1" alt="">
+            </div>
+            <div class="title">
+                <img src="./网易云音乐.png" id="img2" alt="">
+                <span>网易云音乐</span>
+            </div>
+        </div>
+        <div class="login__body">
+            <div class="item">
+                <input type="text" placeholder="登录邮箱">
+            </div>
+            <div class="item">
+                <input type="text" placeholder="密码">
+            </div>
+            <div class="item"><button>登录</button>
+            </div>
+            <div class="set">
+                <span>重设密码</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
