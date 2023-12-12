@@ -24,6 +24,65 @@ body{
     padding: 0 21px;
     display: flex;
 }
+.card_right{
+    margin-left: 23px;
+    width: 42px;
+    height: 170px;
+    background: linear-gradient(126deg, #494B4E 0%, #1D2027 100%);
+    border-radius: 15px;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    line-height: 170px;
+}
+
+.function{
+    margin-top: 17px;
+    display: flex;
+}
+.container{
+    margin-left: 21px;
+}
+.item{
+    width: 63px;
+    height: 65px;
+    background: #fff;
+    border-radius: 18px;
+    line-height: 65px;
+    text-align: center;
+}
+.text{
+    text-align: center;
+    margin-top: 3px;
+    font-size: 11px;
+}
+.item .iconfont{
+    font-size: 30px;
+}
+
+.list{
+    margin-top: 15px;
+    padding-left: 21px;
+}
+.wrap{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+}
+.discription{
+    margin-left: 12px;
+    flex:1;
+}
+.discription-head{
+    font-style: 15px;
+}
+.discription-body{
+    font-size: 11px;
+}
+.money{
+   color: #32BE4B;
+   font-size: 15px;
+}
 
 ul li{
     list-style: none;

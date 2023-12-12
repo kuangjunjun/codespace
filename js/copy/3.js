@@ -1,7 +1,7 @@
 // 浅拷贝的实现原理
 
 let obj = {
-    name: '阿伟',
+    name: '来颗奇趣蛋',
     age: 18,
     like: {
         type: 'coding'
