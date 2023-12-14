@@ -31,6 +31,7 @@ export default {
     background: @color-background-s;
     color: @color-white;
     backdrop-filter: blur(10px);
+    z-index: 999;
     &.fade-enter-from, &.fade-leave-to{
         opacity: 0;
         background: @color-background;

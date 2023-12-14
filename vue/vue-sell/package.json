@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.5.1",
+    "axios": "^1.6.2",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
@@ -17,7 +19,5 @@
     "@vue/cli-service": "~5.0.0",
     "less": "^4.0.0",
     "less-loader": "^8.0.0"
-  },
-  "_id": "vue-sell@0.1.0",
-  "readme": "ERROR: No README data found!"
+  }
 }
