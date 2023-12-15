@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ingol {
+    width: 86%;
+    /* 设置整个页面宽度为百分之九十三 */
+    max-width: 1200px;
+    /* 设置最大宽度为1200像素 */
+    margin: 0 auto;
+    /* 居中显示 */
+    margin-top: 30px;
+}
+
+.ingol-title {
+    color: #aaa;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.ingol-wrapper {
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.item {
+    flex: 1;
+}
+
+.item-head {
+    font-weight: bold;
+}
+
+.item-body {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.ingol-logo {
+    position: absolute;
+    top: 35px;
+}
+
+.ingol-content {
+    margin-top: 15px;
+    display: flex;
+}
+
+.content-left {
+    width: 25%;
+    ;
+}
+
+.about-us {
+    display: flex;
+    position: relative;
+}
+
+.about {
+    margin-left: 6px;
+}
+.more{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.des-hd {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.des-bd {
+    text-indent: 32.4px;
+    font-size: 15px;
+    color: #aaa;
+    margin-left: 10px;
+}
+
+.content-mid {
+    margin-left: 40px;
+    width: 45%;
+}
+
+.news {
+    margin-top: 15px;
+    font-size: 14px;
+    position: relative;
+}
+
+.time {
+    float: right;
+    color: #aaa;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #aaa;
+    /* 设置虚线样式和颜色 */
+    margin: 6px 0;
+    /* 设置上下间距 */
+}
+.map{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-right {
+    flex: 1;
+    margin-left: 40px;
+}
+.login{
+    padding: 30px 10px 0px 10px;
+}
+.name{
+    display: flex;
+}
+.password{
+    display: flex;
+    margin-top: 10px;
+}
+input{
+    padding: 10px;
+    flex: 1;
+}
+.check{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 12px;
+}
+.auto{
+    display: flex;
+    align-items: center;
+}
+.login-button{
+    display: flex;
+    margin-top: 10px;
+}
+button{
+    flex: 1;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+    background-color: #4aa011;
+    opacity: 0.7;
+}
+.request{
+    color: #4aa011;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
