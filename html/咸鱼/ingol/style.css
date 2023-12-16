@@ -62,11 +62,13 @@
 .about {
     margin-left: 6px;
 }
-.more{
+
+.more {
     position: absolute;
     bottom: 0;
     right: 0;
 }
+
 .des-hd {
     margin-top: 10px;
     width: 100%;
@@ -102,7 +104,8 @@ hr {
     margin: 6px 0;
     /* 设置上下间距 */
 }
-.map{
+
+.map {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -112,36 +115,44 @@ hr {
     flex: 1;
     margin-left: 40px;
 }
-.login{
+
+.login {
     padding: 30px 10px 0px 10px;
 }
-.name{
+
+.name {
     display: flex;
 }
-.password{
+
+.password {
     display: flex;
     margin-top: 10px;
 }
-input{
+
+input {
     padding: 10px;
     flex: 1;
 }
-.check{
+
+.check {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     color: #aaa;
     font-size: 12px;
 }
-.auto{
+
+.auto {
     display: flex;
     align-items: center;
 }
-.login-button{
+
+.login-button {
     display: flex;
     margin-top: 10px;
 }
-button{
+
+button {
     flex: 1;
     border-radius: 5px;
     font-size: 16px;
@@ -149,10 +160,71 @@ button{
     background-color: #4aa011;
     opacity: 0.7;
 }
-.request{
+
+.request {
     color: #4aa011;
     font-size: 12px;
     text-align: center;
     margin-top: 10px;
 }
 
+.divide {
+    margin-top: 50px;
+    border-bottom: solid #4aa011 2px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    flex: 0 0 calc(30% - 40px); /* 设置每个产品占据的宽度 */
+  }
+  
+  .product img {
+    max-width: 100%;
+    height: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .product h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .product p {
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .product .price {
+    font-weight: bold;
+  }
+  
+  .product button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .product button:hover {
+    background-color: #0056b3;
+  }
+  .ft{
+    margin-top: 40px;
+    background-color: #aaaaaa60;
+    text-align: center;
+    padding: 15px 0;
+  }

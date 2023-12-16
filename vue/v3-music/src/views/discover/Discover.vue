@@ -1,6 +1,6 @@
 <template>
     <div>
-        Search
+        Discover
     </div>
 </template>
 
