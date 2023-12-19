@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 返回promise对象的函数
+        function getDataByAjax(url){
+            // Promise 是 ES6 提供的一个类， 实例化的时候， 立即执行传给它的执行器
+            // executor 同步
+            return new Promise((resolve,reject) => {
+                console.log('111');
+            })
+        }
+        (async function(){
+            const p = getDataByAjax('https://api.github.com/users/shunwuyu/repos')
+            console.log('222');
+            console.log(p);
+            // await 后面是一个promise对象
+            const data = await p
+            console.log('222');
+        })()
+    </script>
+</body>
+</html>
