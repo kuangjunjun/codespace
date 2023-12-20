@@ -45,16 +45,11 @@
             const p = getDataByAjax('https://api.github.com/users/kuangjunjun/repos')
             console.log('222');
             console.log(p);
-            try{
-                const data = await  p // pending 状态  Promise实例
+            // await 后面是一个promise对象
+            const data = await  p // pending 状态  Promise实例
             console.log('333');   // 卡在这里, 等待resolve
             console.log(p);  // fullfilled状态
-            console.log(data);   // 接受的resolve 的值 
-            }catch(err){
-                console.log(err);
-            }
-            // await 后面是一个promise对象
-           
+            console.log(data);  // 接受的resolve 的值 
         })()
     </script>
 </body>
