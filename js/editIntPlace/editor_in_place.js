@@ -54,7 +54,7 @@ EditInPlace.prototype = {
     attachEvents: function () {
         // this
         // var that = this
-        // this.staticElement.addEventListener('click', () => {
+        // this.staticElement.addEventListener('click', function() {
         //     // 什么问题 this 丢失
         //     that.convertToedit()
         // })
@@ -62,10 +62,15 @@ EditInPlace.prototype = {
         //     // 什么问题 this 丢失
         //     this.convertToedit()
         // })
+        var that = this
         this.staticElement.addEventListener('click', 
             this.convertToedit.bind(this))
         this.cancelButton.addEventListener('click',
             this.converToText.bind(this))
-        this.saveButton.addEventListener('click', )
+        this.saveButton.addEventListener('click', function () {
+            var val = that.fieldElement.value
+            that.staticElement.innerText = val
+            that.converToText()
+        })
     }
 }
