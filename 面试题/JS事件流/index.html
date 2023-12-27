@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+        #wrap{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="wrap">
+            <div id="box">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let app = document.getElementById('app')
+        let wrap = document.getElementById('wrap')
+        let box = document.getElementById('box')
+        // app.addEventListener('click', (e) => {  // 绑定， 订阅， 注册
+        //     console.log('app');
+        //     // e.stopPropagation()
+        //     e.stopImmediatePropagation()
+        // }, true)
+
+        // wrap.addEventListener('click', () => {
+        //     console.log('wrap');
+        // }, true)
+
+        box.addEventListener('click', (e) => {
+            console.log('box');
+            // 阻止冒泡
+            // e.stopPropagation()
+            // console.log(e);
+            e.stopImmediatePropagation()
+        })
+        box.addEventListener('click', (e) => {
+            console.log('box2');
+        })
+    </script>
+</body>
+</html>
