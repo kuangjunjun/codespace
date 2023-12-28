@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        let myEvent = new CustomEvent('run', {detail: {name: 'running'}, 'bubble': true, cancelable:false})
+        window.addEventListener('run', e => {
+            console.log(`事件背${e.detail.name}触发`);
+        })
+        window.dispatchEvent(myEvent)
+    </script>
+</body>
+</html>
