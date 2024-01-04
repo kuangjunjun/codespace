@@ -28,6 +28,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router'
+import axios from '../api'
 
 const router = useRouter()
 const state = reactive({    // 将对象变成响应式
@@ -35,9 +36,17 @@ const state = reactive({    // 将对象变成响应式
     password: '',
 })
 
-const onSubmit = () => {
+const onSubmit = async() => {
     // 发请求， 
     console.log(state.username, state.password);
+    const res = await axios.post('/login', {
+        username: state.username,
+        password: state.password
+    })
+    console.log(res);
+    // 保存用户信息
+    sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+    router.push('/noteClass')
 }
 
 const register = () => {
