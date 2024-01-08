@@ -14,7 +14,7 @@ const routes:RouteRecordRaw[] = [
     {
         path: '/',
         redirect: '/dashboard' // 重定向 30x
-    },
+    },      
     {
         path: '/login',
         name: 'login',
