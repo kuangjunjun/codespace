@@ -6,7 +6,7 @@
           <van-icon name="wap-nav" />
         </div>
         <div>
-          <van-icon name="edit" />
+          <van-icon name="edit" @click="goNotePublish"/>
           <van-icon name="like-o" />
           <van-icon name="search" />
         </div>
@@ -50,7 +50,10 @@ const hideMenu = (e) => {
 }
 
 const goNoteList = (title) => {
-  router.push({path: '/noteList', query: {'title': title}})
+  router.push({ path: '/noteList', query: {'title': title} })
+}
+const goNotePublish = () => {
+  router.push('/notePublish')
 }
 </script>
 
