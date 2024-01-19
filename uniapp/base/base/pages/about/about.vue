@@ -32,5 +32,9 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-
+	.btn{
+		button{
+			width: 750rpx; // rpx是根据屏幕宽度制定的响应式单位
+		}
+	}
 </style>
