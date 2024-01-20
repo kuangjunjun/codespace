@@ -20,7 +20,7 @@
 	defineProps({
 		icon: {
 			type: String,
-			default: ''
+			default: 'mic'
 		}
 	})
 		
