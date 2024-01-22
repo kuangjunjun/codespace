@@ -14,7 +14,7 @@
 
 		<!-- banner -->
 		<view class="banner">
-			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" indicator-color="#eee" indicator-active-color="#d81e06" circular>
+			<swiper :indicator-dots="true" :autoplay="false" :interval="3000" :duration="1000" indicator-color="#eee" indicator-active-color="#d81e06" circular>
 				<swiper-item v-for="item in state.banners" :key="item.encodeId">
 					<view class="swiper-item">
 						<image :src="item.pic" mode=""></image>
@@ -29,31 +29,40 @@
 				<view class="icon">
 					<image :src="item.iconUrl" mode="aspectFill"></image>
 				</view>
-				<text>{{ item.name }}</text>
+				<text>{{item.name}}</text>
 			</view>
 		</view>
 		
-		<!-- 专属推荐 -->
-		<songList :list="state.recommendList"/> 
+		<!-- 推荐歌单 -->
+		<songList :list="state.recommendList" title="推荐歌单"/>
+		<!-- 推荐歌曲 -->
+		<recommendSong :list="state.recommendSongs"/>
+		<!-- xxx雷达歌单 -->
+		<songList :list="state.personalizedList" title="蜗牛的雷达歌单"/>
+		
 	</view>
 </template>
 
 <script setup>
-import { apiGetBanner, apiGetBall, apiGetRecommendList } from '@/api/index.js'
+import { apiGetBanner, apiGetBall, apiGetRecommendList, apiGetRecommendSongs, apiGetPersonalizedList } from '@/api/index.js'
 import { onLoad } from '@dcloudio/uni-app'
 import { reactive } from 'vue';
 
 const state = reactive({
 	banners: [],
 	balls: [],
-	recommendList: []
+	recommendList: [],
+	recommendSongs: [],
+	personalizedList: []
 })
 
 
 onLoad(() => {
 	getBanner()
 	getBall()
-	getRecommendSong()
+	getRecommendList()
+	getRecommendSongs()
+	getPersonalizedList()
 })
 
 // 获取banner图
@@ -65,16 +74,30 @@ const getBanner = () => {
 }
 // 获取入口列表
 const getBall = async() => {
-	const { data: {data: balls } } = await  apiGetBall()
+	const { data: { data: balls } } = await apiGetBall()
 	// console.log(balls);
 	state.balls = balls
 }
-
-const getRecommendSong = async() => {
-	const {data: {recommend: recommend}} = await apiGetRecommendList()
-	console.log(recommend);
+// 推荐歌单
+const getRecommendList = async() => {
+	const { data: { recommend: recommend }} = await apiGetRecommendList()
+	// console.log(recommend);
 	state.recommendList = recommend
 }
+// 推荐歌曲
+const getRecommendSongs = async() => {
+	const res = await apiGetRecommendSongs()
+	// console.log(res.data.data.dailySongs);
+	state.recommendSongs = res.data.data.dailySongs
+}
+// 雷达歌单
+const getPersonalizedList = async() => {
+	const res = await apiGetPersonalizedList()
+	console.log(res.data.result);
+	state.personalizedList = res.data.result
+}
+
+
 
 </script>
 
@@ -95,6 +118,7 @@ const getRecommendSong = async() => {
 	}
 	.banner{
 		.swiper-item{
+			width: 100%;
 			height: 100%;
 			border-radius: 10px;
 			overflow: hidden;
@@ -113,12 +137,12 @@ const getRecommendSong = async() => {
 			font-size: 20rpx;
 			text-align: center;
 			.icon{
-				height: 70rpx;
 				width: 70rpx;
+				height: 70rpx;
 				margin: 0 auto;
 				margin-bottom: 14rpx;
 				background-color: $uni-primary-color;
-				border-radius: 10px;
+				border-radius: 50%;
 				image{
 					width: 100%;
 					height: 100%;
