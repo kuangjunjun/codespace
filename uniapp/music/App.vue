@@ -9,7 +9,7 @@
 				this.$store.commit('changeLoginState', false)
 				return
 			}
-			获取登录状态
+			//获取登录状态
 			uni.request({
 				url: baseUrl + '/login/status',
 				data: {
@@ -55,5 +55,5 @@
 
 <style>
 	/*每个页面公共css */
-	@import url("https://at.alicdn.com/t/c/font_4416312_yya8hpmtu5.css");
+	@import url("http://at.alicdn.com/t/c/font_4417059_3tua0draqgi.css");
 </style>

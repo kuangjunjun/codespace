@@ -1,7 +1,5 @@
 <template>
-	<view class="head">
-		
-	</view>
+	<view class="head" v-if="needBox"></view>
 	<view class="header" :style="{backgroundColor: bgColor}">
 		<uni-icons type="bars" size="22" @click="showMenu"></uni-icons>
 		
@@ -31,7 +29,8 @@
 		needBox: {
 			type: Boolean,
 			default: true
-		}
+		},
+		fontColor: String
 	})
 	
 	const showMenu = () => {
@@ -43,11 +42,11 @@
 .head{
 	position: fixed;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 80rpx;
-	left: 0;
-	z-index: 9999;
 	background-color: #fff;
+	z-index: 9999;
 }
 .header{
 	// background-color: #fff;
@@ -62,6 +61,10 @@
 	width: 100%;
 	box-sizing: border-box;
 	z-index: 999;
+	color: v-bind(fontColor);
+	:deep(.uni-icons){
+		color: v-bind(fontColor) !important;
+	}
 }
 .box{
 	height: 180rpx;
