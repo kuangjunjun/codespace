@@ -31,6 +31,21 @@ if (uni.restoreGlobal) {
 }
 (function(vue, shared) {
   "use strict";
+  const ON_LOAD = "onLoad";
+  function formatAppLog(type, filename, ...args) {
+    if (uni.__log__) {
+      uni.__log__(type, filename, ...args);
+    } else {
+      console[type].apply(console, [...args, filename]);
+    }
+  }
+  function resolveEasycom(component, easycom) {
+    return shared.isString(component) ? easycom : component;
+  }
+  const createHook = (lifecycle) => (hook, target = vue.getCurrentInstance()) => {
+    !vue.isInSSRComponentSetup && vue.injectHook(lifecycle, hook, target);
+  };
+  const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -757,22 +772,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/codespace/uniapp/music/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const ON_LOAD = "onLoad";
-  function formatAppLog(type, filename, ...args) {
-    if (uni.__log__) {
-      uni.__log__(type, filename, ...args);
-    } else {
-      console[type].apply(console, [...args, filename]);
-    }
-  }
-  function resolveEasycom(component, easycom) {
-    return shared.isString(component) ? easycom : component;
-  }
-  const createHook = (lifecycle) => (hook, target = vue.getCurrentInstance()) => {
-    !vue.isInSSRComponentSetup && vue.injectHook(lifecycle, hook, target);
-  };
-  const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   const isObject$1 = (val) => val !== null && typeof val === "object";
   const defaultDelimiters = ["{", "}"];
   class BaseFormatter {
@@ -1290,7 +1290,7 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$3], ["__scopeId", "data-v-f07ef577"], ["__file", "D:/codespace/uniapp/music/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$3], ["__scopeId", "data-v-f07ef577"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
   function getDevtoolsGlobalHook() {
     return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
   }
@@ -2375,7 +2375,10 @@ if (uni.restoreGlobal) {
           vue.Fragment,
           null,
           [
-            vue.createElementVNode("view", { class: "head" }),
+            __props.needBox ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              class: "head"
+            })) : vue.createCommentVNode("v-if", true),
             vue.createElementVNode(
               "view",
               {
@@ -2401,7 +2404,7 @@ if (uni.restoreGlobal) {
               /* STYLE */
             ),
             __props.needBox ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 0,
+              key: 1,
               class: "box"
             })) : vue.createCommentVNode("v-if", true)
           ],
@@ -2411,7 +2414,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-f4ce61de"], ["__file", "D:/codespace/uniapp/music/components/wyheader/wyheader.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-f4ce61de"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/wyheader/wyheader.vue"]]);
   const _sfc_main$9 = {
     __name: "menuLeft",
     setup(__props) {
@@ -2484,7 +2487,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-5a515901"], ["__file", "D:/codespace/uniapp/music/components/menuLeft/menuLeft.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-5a515901"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/menuLeft/menuLeft.vue"]]);
   const _sfc_main$8 = {
     __name: "songList",
     props: {
@@ -2526,7 +2529,7 @@ if (uni.restoreGlobal) {
                     }, null, 8, ["src"])
                   ]),
                   vue.createElementVNode(
-                    "text",
+                    "view",
                     { class: "title" },
                     vue.toDisplayString(item.name),
                     1
@@ -2542,7 +2545,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-29452354"], ["__file", "D:/codespace/uniapp/music/components/songList/songList.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-29452354"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/songList/songList.vue"]]);
   const _sfc_main$7 = {
     __name: "recommendSong",
     props: {
@@ -2560,7 +2563,6 @@ if (uni.restoreGlobal) {
           }
           arr.push(item);
         });
-        formatAppLog("log", "at components/recommendSong/recommendSong.vue:49", swiperList.value, "------");
       });
       return (_ctx, _cache) => {
         const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
@@ -2640,8 +2642,8 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-4a8ab05d"], ["__file", "D:/codespace/uniapp/music/components/recommendSong/recommendSong.vue"]]);
-  const baseUrl = "http://192.168.2.22:3000";
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-4a8ab05d"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/recommendSong/recommendSong.vue"]]);
+  const baseUrl = "http://192.168.0.104:3000";
   const apiGetBanner = (data) => {
     return uni.request({
       url: baseUrl + "/banner",
@@ -2709,6 +2711,7 @@ if (uni.restoreGlobal) {
       };
       const getPersonalizedList = async () => {
         const res = await apiGetPersonalizedList();
+        formatAppLog("log", "at pages/index/index.vue:96", res.data.result);
         state.personalizedList = res.data.result;
       };
       return (_ctx, _cache) => {
@@ -2807,7 +2810,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-1cf27b2a"], ["__file", "D:/codespace/uniapp/music/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-1cf27b2a"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/index/index.vue"]]);
   const _sfc_main$5 = {
     data() {
       return {};
@@ -2816,12 +2819,11 @@ if (uni.restoreGlobal) {
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", null, " 播客 ");
   }
-  const PagesPlayPlay = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__file", "D:/codespace/uniapp/music/pages/play/play.vue"]]);
+  const PagesPlayPlay = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/play/play.vue"]]);
   const _sfc_main$4 = {
     __name: "mine",
     setup(__props) {
       const store2 = useStore();
-      formatAppLog("log", "at pages/mine/mine.vue:40", store2.state.loginState);
       const isLogin = vue.computed(() => {
         return store2.state.loginState;
       });
@@ -2875,7 +2877,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-7c2ebfa5"], ["__file", "D:/codespace/uniapp/music/pages/mine/mine.vue"]]);
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-7c2ebfa5"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/mine/mine.vue"]]);
   const _sfc_main$3 = {
     data() {
       return {};
@@ -2894,7 +2896,7 @@ if (uni.restoreGlobal) {
       vue.createTextVNode(" 关注 ")
     ]);
   }
-  const PagesFollowFollow = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1], ["__file", "D:/codespace/uniapp/music/pages/follow/follow.vue"]]);
+  const PagesFollowFollow = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/follow/follow.vue"]]);
   const _sfc_main$2 = {
     data() {
       return {};
@@ -2903,7 +2905,7 @@ if (uni.restoreGlobal) {
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", null, " 社区 ");
   }
-  const PagesCommunityCommunity = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render], ["__file", "D:/codespace/uniapp/music/pages/community/community.vue"]]);
+  const PagesCommunityCommunity = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/community/community.vue"]]);
   const _sfc_main$1 = {
     __name: "login",
     setup(__props) {
@@ -2988,7 +2990,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__file", "D:/codespace/uniapp/music/pages/login/login.vue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/login/login.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/play/play", PagesPlayPlay);
   __definePage("pages/mine/mine", PagesMineMine);
@@ -3003,7 +3005,6 @@ if (uni.restoreGlobal) {
         this.$store.commit("changeLoginState", false);
         return;
       }
-      获取登录状态;
       uni.request({
         url: baseUrl + "/login/status",
         data: {
@@ -3027,6 +3028,8 @@ if (uni.restoreGlobal) {
     },
     methods: {
       getUser(key) {
+        if (!key)
+          return;
         uni.request({
           url: baseUrl + "/user/account",
           data: {
@@ -3043,15 +3046,15 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "D:/codespace/uniapp/music/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/App.vue"]]);
   const store = createStore({
     state: {
       isShowMenu: false,
-      //控制菜单显示隐藏
+      // 控制菜单显示隐藏
       loginState: false,
-      //是否登录
+      // 是否登录
       userInfo: {
-        //用户信息
+        // 用户信息
         nickname: "",
         userId: null,
         avatar: ""

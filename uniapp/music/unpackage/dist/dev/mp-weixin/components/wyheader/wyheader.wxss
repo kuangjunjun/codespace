@@ -34,6 +34,7 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
+  z-index: 999;
 }
 .box.data-v-f4ce61de {
   height: 100rpx;

@@ -4,7 +4,7 @@
 			<!-- 将内容填充到名为content的插槽中 -->
 			<template v-slot:content>
 				<view class="search">
-					<uni-search-bar  placeholder="歌曲"></uni-search-bar>
+					<uni-search-bar placeholder="歌曲"></uni-search-bar>
 				</view>
 			</template>
 		</wyheader>
@@ -93,7 +93,7 @@ const getRecommendSongs = async() => {
 // 雷达歌单
 const getPersonalizedList = async() => {
 	const res = await apiGetPersonalizedList()
-	// console.log(res.data.result);
+	console.log(res.data.result);
 	state.personalizedList = res.data.result
 }
 

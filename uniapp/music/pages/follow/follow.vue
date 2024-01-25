@@ -5,6 +5,7 @@
 				<text>动态</text>
 			</template>
 		</wyheader>
+		
 		关注
 	</view>
 </template>
@@ -13,7 +14,7 @@
 	export default {
 		data() {
 			return {
-
+				
 			};
 		}
 	}

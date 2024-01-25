@@ -630,11 +630,11 @@
 .head[data-v-f4ce61de] {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 2.5rem;
-  left: 0;
-  z-index: 9999;
   background-color: #fff;
+  z-index: 9999;
 }
 .header[data-v-f4ce61de] {
   height: 3.125rem;
@@ -754,6 +754,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.9375rem;
+  font-weight: bold;
 }
 .recommend .recommend-bd[data-v-29452354] {
   display: flex;
@@ -773,7 +774,7 @@
 .recommend .recommend-bd .recommend-bd__item .item-pic uni-image[data-v-29452354] {
   width: 100%;
   height: 7.5rem;
-  border-radius: 0.625rem;
+  border-radius: 10px;
 }
 .recommend .recommend-bd .recommend-bd__item .title[data-v-29452354] {
   font-size: 0.75rem;

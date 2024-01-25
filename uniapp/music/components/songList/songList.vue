@@ -1,7 +1,7 @@
 <template>
 	<view class="recommend">
 		<view class="recommend-hd">
-			<view class="title">{{ title }}</view>
+			<view class="title">{{title}}</view>
 			<view class="more">
 				<uni-icons type="right" size="16"></uni-icons>
 			</view>
@@ -11,7 +11,7 @@
 				<view class="item-pic">
 					<image :src="item.picUrl" mode="aspectFill"></image>
 				</view>
-				<text class="title">{{ item.name }}</text>
+				<view class="title">{{item.name}}</view>
 			</view>
 		</view>
 	</view>
@@ -30,6 +30,7 @@ defineProps({
 		display: flex;
 		justify-content: space-between;
 		font-size: 30rpx;
+		font-weight: bold;
 	}
 	.recommend-bd {
 		display: flex;
@@ -42,12 +43,11 @@ defineProps({
 				margin-left: 0;
 			}
 			.item-pic{
-				
 				width: 240rpx;
 				image{
 					width: 100%;
 					height: 240rpx;
-					border-radius: 20rpx;
+					border-radius: 10px;
 				}
 			}
 			.title{

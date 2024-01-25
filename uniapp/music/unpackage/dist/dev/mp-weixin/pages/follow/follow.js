@@ -20,5 +20,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/codespace/uniapp/music/pages/follow/follow.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/pages/follow/follow.vue"]]);
 wx.createPage(MiniProgramPage);

@@ -36,5 +36,5 @@ const _sfc_main = {
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-f4ce61de"], ["__file", "D:/codespace/uniapp/music/components/wyheader/wyheader.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-f4ce61de"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/wyheader/wyheader.vue"]]);
 wx.createComponent(Component);

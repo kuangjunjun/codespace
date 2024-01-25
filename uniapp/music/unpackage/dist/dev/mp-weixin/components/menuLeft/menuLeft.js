@@ -35,5 +35,5 @@ const _sfc_main = {
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-5a515901"], ["__file", "D:/codespace/uniapp/music/components/menuLeft/menuLeft.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-5a515901"], ["__file", "/Users/pengshicong/Documents/codeSpace/uniapp/music/components/menuLeft/menuLeft.vue"]]);
 wx.createComponent(Component);
