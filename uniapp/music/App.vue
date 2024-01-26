@@ -16,7 +16,7 @@
 					cookie: key
 				},
 				success: (res) => {
-					console.log(res.data.data.account.id);
+					// console.log(res.data.data.account.id);
 					let id = res.data.data.account.id
 					if (id) {
 						this.$store.commit('changeLoginState', true)
@@ -55,7 +55,7 @@
 
 <style>
 	/*每个页面公共css */
-	@import url("https://at.alicdn.com/t/c/font_4416312_1m932ehvlrq.css");
+	@import url("https://at.alicdn.com/t/c/font_4417059_12pgsrni1jz.css");
 	*{
 		margin: 0;padding: 0;
 	}
