@@ -10,7 +10,7 @@ export default createStore({
 			avatar: ''
 		},
 		isShowPlayer: false,
-		currentPlayId: null, // 当前播放的歌曲id
+		currentPlayId: null, // 当前播放的歌曲的id
 	},
 	mutations: {
 		changeIsShowMenu(state, flag) {
@@ -22,11 +22,11 @@ export default createStore({
 		getUserInfo(state, opt) {
 			state.userInfo = opt
 		},
-		changeCurrentPlayId(state, id){
-			state.currentPlayId = id
-		},
-		changeIsShowPlay(state, flag){
+		changeIsShowPlayer(state, flag) {
 			state.isShowPlayer = flag
+		},
+		changeCurrentPlayId(state, id) {
+			state.currentPlayId = id
 		}
 	}
 })

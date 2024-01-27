@@ -112,7 +112,9 @@
 				</view>
 			</view>
 		</view>
-		<musicPlayer :bottom="100"/>
+		
+		<!-- 播放器 -->
+		<musicPlayer bottom="100rpx"/>
 	</scroll-view>
 </template>
 
@@ -186,7 +188,7 @@ const changeNav = (index) => { // 0 1 2   1 3 5
 let bgOpacity = 0
 let fontColor = 255
 const handleScroll = (e) => { // 0 - 340
-	console.log(e.detail.scrollTop);
+	// console.log(e.detail.scrollTop);
 	let top = e.detail.scrollTop
 	if (top <= 340) {
 		bgOpacity = (top / 340).toFixed(2)

@@ -75,9 +75,9 @@ import { onLoad } from '@dcloudio/uni-app';
 import { ref } from 'vue';
 import { useStore } from 'vuex'
 
-const store = useStore()
 const list = ref([]);
 const info = ref({});
+const store = useStore()
 
 const goBack = () => {
 	uni.navigateBack();
@@ -96,17 +96,16 @@ const getPlayList = async (id) => {
 };
 const getPlayListDetail = async (id) => {
 	const res = await apiGetPlayListDetail(id);
-	console.log(res.data.playlist, '----');
+	// console.log(res.data.playlist, '----');
 	info.value = res.data.playlist;
 };
 
 const showPlayer = (id) => {
 	// 展示播放器
-	//传递id
-	store.commit('changeIsShowPlay', true)
-	store.commit('ChangeCurrentId', id )
+	// 传递id
+	store.commit('changeIsShowPlayer', true)
+	store.commit('changeCurrentPlayId', id)
 }
-
 </script>
 
 <style lang="scss">

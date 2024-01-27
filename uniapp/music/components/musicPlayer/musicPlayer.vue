@@ -1,19 +1,21 @@
 <template>
-	<view class="player">
-		<view class="mini-player">
+	<view class="player" v-if="store.state.isShowPlayer">
+		<view class="mini-player" >
 			<view class="pic">
-				<image src="../../static/logo.png"></image>
+				<image :src="state.pic"></image>
 			</view>
 			<view class="song">
-				<text class="name">想云端</text>
-				<text class="author"> - 小霞</text>
+				<text class="name">{{state.name}}</text>
+				<text class="author"> - {{state.author}}</text>
 			</view>
 			<view class="player-control">
 				<view class="iconfont icon-bofanganniu"></view>
 				<view class="iconfont icon-16gl-playlistMusic"></view>
 			</view>
 		</view>
-		
+		<view class="max-player">
+			
+		</view>
 	</view>
 </template>
 
@@ -35,7 +37,8 @@ const state = reactive({
 	name: '',
 	author: '',
 	time: '',
-	pic: ''
+	pic: '',
+	method: 'pause'
 })
 
 
@@ -43,6 +46,17 @@ const getSongUrl = async(id) => {
 	const res = await apiGetSongUrl(id)
 	// console.log(res.data.data[0].url);
 	state.url = res.data.data[0].url
+	// 创建内置播放器
+	const innerAudioContext = uni.createInnerAudioContext();
+	innerAudioContext.autoplay = true;
+	innerAudioContext.src = state.url
+	innerAudioContext.onPlay(() => {
+	  console.log('开始播放');
+	});
+	innerAudioContext.onError((res) => {
+	  console.log(res.errMsg);
+	  console.log(res.errCode);
+	});
 }
 const getSongDetail = async(id) => {
 	const res = await apiGetSongDetail(id)
@@ -51,13 +65,11 @@ const getSongDetail = async(id) => {
 	state.pic = res.data.songs[0].al.picUrl
 	state.time = res.data.songs[0].dt
 	state.author = res.data.songs[0].ar.map((item) => item.name).join('/')
-	
-	
 }
 
 watch(
 	() => store.state.currentPlayId,
-	(newVal, oldVal) => {
+	async(newVal, oldVal) => {
 		getSongUrl(newVal)
 		getSongDetail(newVal)
 	}
