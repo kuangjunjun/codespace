@@ -21,7 +21,7 @@ function createWebHashHistory() {
     url: window.location.hash.slice(1) || '/'
   }
 }
-
+// 提交代码
 class Router {
   constructor(options) {
     this.history = options.history
