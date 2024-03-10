@@ -86,6 +86,13 @@ http://192.168.31.45:8080/list
 
         2). 缺点：1. 必须要后端配合  2. 只能用于get请求
 
-2. Cors  (Cross-Origin Resource Sharing)
+2. Cors  (Cross-Origin Resource Sharing)  --- 后端通过设置响应头来告诉浏览器不要拒绝接受后端的响应
 
+3. node代理  （vite 开发环境下生效）
 
+4. nginx代理  (类似Cors, 配置白名单) (生产环境下常用)
+
+5. domain  (在iframe中, 当父级页面和子级页面的 子域 不同时，通过设置 document.domain='xx' 来将
+xx定为基础域，从而实现跨域)
+
+6. postMessage  (在ifrmae中，)
