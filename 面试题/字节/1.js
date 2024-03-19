@@ -17,10 +17,10 @@ Object.defineProperties(obj, 'd', {
 
 function hasProper(obj, key) {
     // return obj[key] !== undefined   值为undefined的属性就判断不了
-    // return Object.keys(obj).includes(key)  属性为不可枚举时，判断不了
+    // return Object.keys(obj).includes(key)  //属性为不可枚举时，判断不了
     // return obj.hasOwnProperty(key)  只能判断显示属性
 
     return key in obj
 }
 
-hasProper(obj, 'a')  // true
+hasProper(obj, 'd')  // true
