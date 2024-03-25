@@ -62,7 +62,7 @@ function tokenizer(input) {
 function parse(template) {
     // 分词
     const tokens = tokenizer(template);
-    // console.log(tokens);
+    console.log(tokens);
     let cur = 0
     let ast = {
         type: 'root',
