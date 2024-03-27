@@ -13,3 +13,11 @@
 - three.js  3D
     - 以导演的感性去构建3D世界
         camera scene renderer
+
+- 菌菌等  小米汽车实习的方案
+- 小米汽车 app的仿品
+
+- 添加three.js, canvas  数据可视化及Web 3D渲染
+
+
+- 基于three.js实现3D在线选车配件功能

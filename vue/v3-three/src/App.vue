@@ -16,13 +16,14 @@ const camera = new THREE.PerspectiveCamera(
 ) 
 
 let controls = null;
-
+// x   y   z   摄像头放置的位置, 酷家乐  3D家居
 camera.position.set(0, 2, 6) // 摆好
 // 场景
+//
 const scene = new THREE.Scene();
 // 渲染器 canvas 幕布 不停的去输出
 // OpenGL 3D建模 显卡计算 GPU  canvas 3D  GPU计算
-
+// 
 const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
@@ -59,10 +60,27 @@ onMounted(() => {
   loader.load('../public/roadSter/model/bmw01.glb', gltf => {
     const bmw = gltf.scene;
     scene.add(bmw);
+    // 模型由各个部分构成的， 数组一样， 可以让我们遍历
     bmw.traverse(child => {
       if (child.isMesh && child.name.includes("轮毂")) {
         child.material = wheelsMaterial;
         wheels.push(child)
+      }
+      if (child.isMesh && child.name.includes("Mesh002")) {
+        carBody = child
+        carBody.material = bodyMaterial
+      }
+      if (child.isMesh && child.name.includes("前脸")) {
+        frontCar = child
+        frontCar.material = frontMaterial
+      }
+      if (child.isMesh && child.name.includes("引擎盖_1")) {
+        hoodCar = child
+        hoodCar.material = hoodMaterial
+      }
+      if (child.isMesh && child.name.includes("挡风玻璃")) {
+        glassCar = child
+        glassCar.material = glassMaterial
       }
     })
   })
@@ -99,12 +117,75 @@ onMounted(() => {
 })
 
 let wheels = [];
+let carBody;
+let frontCar;
+let hoodCar;
+let glassCar;
 
 const wheelsMaterial = new THREE.MeshPhysicalMaterial({
   color: 0x424449,
   metalness: 1,
   roughness: 0.5
 })
+//材质
+const bodyMaterial = new THREE.MeshPhysicalMaterial({
+  color: 0x424449,
+  metalness: 1,
+  roughness: 0.5,
+  clearcoat: 1,
+  clearcoatRoughness: 0
+})
+const frontMaterial = new THREE.MeshPhysicalMaterial({
+  color: 0x424449,
+  metalness: 1,
+  roughness: 0.5,
+  clearcoat: 1,
+  clearcoatRoughness: 0
+});
+const hoodMaterial = new THREE.MeshPhysicalMaterial({
+  color: 0x424449,
+  metalness: 1,
+  roughness: 0.5,
+  clearcoat: 1,
+  clearcoatRoughness: 0
+});
+const glassMaterial = new THREE.MeshPhysicalMaterial({
+  color: 0xffffff,
+  metalness: 0,
+  roughness: 0,
+  transmission: 1,
+  transparent: true
+});
+
+const selectColor = color => {
+  bodyMaterial.color.set(color);
+  wheelsMaterial.color.set(color);
+  frontMaterial.color.set(color);
+  hoodMaterial.color.set(color);
+}
+
+let colors = [
+  {
+    name: "冷光银",
+    color: "#424449"
+  },
+  {
+    name: "经典黑",
+    color: "black"
+  },
+  {
+    name: "深海蓝",
+    color: "#000f4a"
+  },
+  {
+    name: "中国红",
+    color: "#bd050f"
+  },
+  {
+    name: "珍珠白",
+    color: "white"
+  }
+];
 
 
 </script>
@@ -118,10 +199,64 @@ const wheelsMaterial = new THREE.MeshPhysicalMaterial({
         <div class="container" ref="containerRef">
         </div>
       </div>
+      <div class="content">
+        <div class="words">选择车身颜色</div>
+        <div class="select">
+          <div 
+            class="select-item"
+            v-for="(item, index) in colors"
+            :key="index"
+            @click="selectColor(item.color)"
+          >
+            <div class="select-item-color" :style="{background: item.color}"></div>
+            <div class="select-item-color-name">{{item.name}}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+.header{
+  width: 100vw;
+  height: 12vh;
+}
+.home {
+  display: flex;
+  .content-box {
+    position: relative;
+    // border: 1px solid #e8eaed;
+  }
+  .content {
+    margin: 10px auto;
+
+    .words {
+      font-size: 20px;
+      margin: 20px;
+    }
+  }
+  .select {
+    display: flex;
+  }
+  .select-item {
+    margin: 5px;
+    cursor: pointer;
+  }
+  .select-item-color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  .select-item-color-name {
+    font-size: 14px;
+  }
+}
 
 </style>
