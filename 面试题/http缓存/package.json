@@ -1,0 +1,9 @@
+{
+  "description": "",
+  "dependencies": {
+    "checksum": "^1.0.0",
+    "mime": "^4.0.1",
+    "mime-type": "^4.0.0",
+    "mime-types": "^2.1.35"
+  }
+}
