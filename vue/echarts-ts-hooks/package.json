@@ -1,0 +1,25 @@
+{
+  "name": "echarts-ts-hooks",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.8",
+    "echarts": "^5.4.2",
+    "lodash-es": "4.17.21",
+    "three":"0.152.2"
+  },
+  "devDependencies": {
+    "@types/three":"0.152.0",
+    "@types/lodash-es": "4.17.7",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.22"
+  }
+}
