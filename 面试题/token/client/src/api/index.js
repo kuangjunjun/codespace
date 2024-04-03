@@ -21,7 +21,7 @@ axios.interceptors.response.use(
             return Promise.reject(res.data.error)
         }
 
-        if (res.data.status >= 400 && res.status < 500) {  // 程序性错误
+        if (res.data.status >= 400 && res.data.status < 500) {  // 程序性错误
             router.push('/login')
             return Promise.reject(res.data)
         }
