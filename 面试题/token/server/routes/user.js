@@ -28,8 +28,8 @@ router.post('/home', jwt.verify(), (ctx) => {
     ctx.body = {
         code: 0,
         data: '这是首页的数据'
-    }
-    console.log(ctx.body);
+    }//1
+    // console.log(ctx.body);
 })
 
 module.exports = router
