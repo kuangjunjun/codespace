@@ -28,7 +28,7 @@ router.post('/home', jwt.verify(), (ctx) => {
     ctx.body = {
         code: 0,
         data: '这是首页的数据'
-    }//1
+    }
     // console.log(ctx.body);
 })
 
