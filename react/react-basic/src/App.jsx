@@ -1,43 +1,36 @@
-// 根组件
-import './App.css'
+import React from 'react'
+import ExitComponent from './components/ExitComponent';
+import ClassComponent from './components/ClassComponent';
 
-const songs = [
-  { id: 1, name: '庐州月'},
-  { id: 2, name: '千百度'},
-  { id: 3, name: '等你下课'}
-]
-
-const flag = true
-
-const styleObj = {
-  color: 'blue'
+class HelloVue extends React.Component{
+    render() {
+        return <h3>这是一个类组件</h3>
+    }
 }
 
-const showGreen = true
+
+function HelloReact(e) {
+    const handler = (e) => {
+        console.log('按钮被点击', e);
+    }
+
+    return <div>
+        <p>这是一个函数组件</p>
+        <button onClick={handler}>click me</button>
+    </div>
+}
+
 
 function App() {
-  return (
-    <div className="app">
-      <h2>Hello React</h2>
-      <ul>
-        {
-          songs.map(item => {
-            return <li key={item.id}>{item.name}</li>
-          })
-        }
-      </ul>
-      <h3>{flag ? 'react真好玩' : 'vue真不错'}</h3>
-      {/* { flag && <a href="#">哈哈哈哈</a>} */}
-      {flag ? <a href="#">哈哈哈哈哈</a> : null}
-      
-      <h2 style={{ color: 'red' }}>红色字体</h2>
-
-      <h2 style={styleObj}>蓝色字体</h2>
-
-      <h2 className={showGreen ? 'green' : ''}>绿色字体</h2>
-
-    </div>
-  )
+    return (
+        <div className="app">
+            <HelloReact></HelloReact>
+            <HelloVue />
+            <hr />
+            <ExitComponent />
+            <ClassComponent />
+        </div>
+    )
 }
 
 export default App
