@@ -9,10 +9,10 @@ const TotoItem = (props) => {
       <List
         bordered
         dataSource={props.data}
-        renderItem={(item) => (
-          <List.Item>
+        renderItem={(item, index) => (
+          <List.Item key={index}>
             {item}
-            <Tag closeIcon onClose={() => {}}>
+            <Tag closeIcon onClose={() => props.cb(index)}>
               删除
             </Tag>
           </List.Item>
