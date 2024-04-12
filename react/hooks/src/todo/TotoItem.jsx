@@ -4,6 +4,11 @@ import { List, Tag } from 'antd';
 // 子组件
 const TotoItem = (props) => {
 
+  const onDel = (e, index) => {
+    e.preventDefault();
+    props.cb(index);
+  } 
+
   return (
     <div>
       <List
@@ -12,7 +17,7 @@ const TotoItem = (props) => {
         renderItem={(item, index) => (
           <List.Item key={index}>
             {item}
-            <Tag closeIcon onClose={() => props.cb(index)}>
+            <Tag closeIcon onClose={(e) => onDel(e, index)}>
               删除
             </Tag>
           </List.Item>

@@ -1,0 +1,15 @@
+.layout{
+    width: 100vw;
+    height: 100vh;
+}
+.ant-layout{
+    height: 100%;
+}
+.hd{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.side{
+    color: #fff;
+}

@@ -21,7 +21,7 @@ const TodoList = () => {
   }
 
   const toSubmit = () => {
-    let arr = [...data]
+    let arr = [...data]  // let arr = data   arr.push()  // 已经将newData修改了，但是不触发组件更新
     arr.push(item)
     setData(arr)
     // console.log(data);
