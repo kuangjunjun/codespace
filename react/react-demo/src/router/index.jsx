@@ -1,7 +1,12 @@
-import { BrowserRouter, useRoutes } from 'react-router-dom'
+import { BrowserRouter, useRoutes, Navigate } from 'react-router-dom'
 import Login from '../pages/login'
 import React from 'react'
+import { Children } from 'react'
+
 const LayoutWrap = React.lazy(() => import('../pages/layout'))
+const Students = React.lazy(() => import('../pages/students'))
+const Persional = React.lazy(() => import('../pages/persional'))
+const Employment = React.lazy(() => import('../pages/employment'))
 
 const routerList = [
     {
@@ -10,7 +15,25 @@ const routerList = [
     },
     {
         path: '/layout',
-        element: <LayoutWrap />
+        element: <LayoutWrap />,
+        children: [
+            {
+                path: '',
+                element: <Navigate to='/layout/students' />
+            },
+            {
+                path: 'students',
+                element: <Students />
+            },
+            {
+                path: 'persional',
+                element: <Persional />
+            },
+            {
+                path: 'employment',
+                element: <Employment />
+            }
+        ]
     }
 ]
 

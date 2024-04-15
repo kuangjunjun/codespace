@@ -11,5 +11,16 @@
     color: #fff;
 }
 .side{
-    /* color: #fff; 1 */
+    color: #fff; 
+}
+.aside-item{
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.aside-item:hover{
+    background-color: #668ae7;
+}
+.aside-item.active{
+    background-color: #668ae7;
 }
