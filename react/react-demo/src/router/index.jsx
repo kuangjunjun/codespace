@@ -1,54 +1,52 @@
-import { BrowserRouter, useRoutes, Navigate } from 'react-router-dom'
-import Login from '../pages/login'
 import React from 'react'
-import { Children } from 'react'
+import { BrowserRouter, useRoutes, Navigate } from 'react-router-dom'
 
-const LayoutWrap = React.lazy(() => import('../pages/layout'))
-const Students = React.lazy(() => import('../pages/students'))
-const Persional = React.lazy(() => import('../pages/persional'))
-const Employment = React.lazy(() => import('../pages/employment'))
+import Login from '../pages/login'
+import LayoutWrap from '../pages/layout'
+import Students from '../pages/students'
+import Employment from '../pages/employment'
+import Personal from '../pages/personal'
 
 const routerList = [
-    {
-        path: '/login',
-        element: <Login />
-    },
-    {
-        path: '/layout',
-        element: <LayoutWrap />,
-        children: [
-            {
-                path: '',
-                element: <Navigate to='/layout/students' />
-            },
-            {
-                path: 'students',
-                element: <Students />
-            },
-            {
-                path: 'persional',
-                element: <Persional />
-            },
-            {
-                path: 'employment',
-                element: <Employment />
-            }
-        ]
-    }
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/layout',
+    element: <LayoutWrap/>,
+    children: [
+      {
+        path: '',
+        element: <Navigate to='/layout/students'/>,
+      },
+      {
+        path: '/layout/students',
+        element: <Students/>
+      },
+      {
+        path: '/layout/employment',
+        element: <Employment/>
+      },
+      {
+        path: '/layout/personal',
+        element: <Personal/>
+      }
+    ]
+  },
 ]
 
+
 function Element() {
-    return useRoutes(routerList)  // <Route path="/" element={<Home />}
+  return useRoutes(routerList)  // <Route path="/" element={<Home/>}/>
 }
 
-function WrapperRoutes() {
-
-    return (
-        <BrowserRouter>
-            <Element />
-        </BrowserRouter>
-    )
+function WrapperRoutes () {
+  return (
+    <BrowserRouter>
+      <Element/>
+    </BrowserRouter>
+  )
 }
-
 
 export default WrapperRoutes
