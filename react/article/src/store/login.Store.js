@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { http } from '@/utils'
+import { http, setToken } from '@/utils'
 
 class LoginStore {
   token = ''
@@ -12,7 +12,9 @@ class LoginStore {
       mobile: username,
       code: password
     })
-    console.log(res);
+    // console.log(res);
+    this.token = res.data.token
+    setToken(res.data.token)
   }
 }
 
