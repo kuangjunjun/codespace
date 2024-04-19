@@ -2,7 +2,7 @@
 2. 使用服务端渲染 (让首屏加载更快, SEO好)
 3. 合理使用CDN
 4. 将css放在文件头部,将js放在文件底部  <script async defer />
-5. 使用精灵图 (雪花图)  --- 有效减少http请求
+5. 使用精灵图 (雪碧图)  --- 有效减少http请求
 6. 善用缓存 (http缓存)
 7. 压缩文件
 8. 懒加载  <image src="xxxxxx" data-src="xxxxx" />
