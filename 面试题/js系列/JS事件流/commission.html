@@ -16,16 +16,17 @@
     <script>
         let ul = document.getElementById('ul')
         ul.addEventListener('click', (e) => {
+            console.log(e);
             console.log(e.target.innerText);
         })
 
-        // let lis = document.querySelectorAll('li')
-        // // console.log(lis);
-        // lis.forEach((li) => {
-        //     li.addEventListener('click', () => {
-        //         console.log(li.innerText);
-        //     })
-        // })
+        let lis = document.querySelectorAll('li')
+        // console.log(lis);
+        lis.forEach((li) => {
+            li.addEventListener('click', () => {
+                console.log(li.innerText);
+            })
+        })
     </script>
 </body>
 </html>

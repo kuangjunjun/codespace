@@ -36,15 +36,15 @@
         let app = document.getElementById('app')
         let wrap = document.getElementById('wrap')
         let box = document.getElementById('box')
-        // app.addEventListener('click', (e) => {  // 绑定， 订阅， 注册
-        //     console.log('app');
-        //     // e.stopPropagation()
-        //     e.stopImmediatePropagation()
-        // }, true)
+        app.addEventListener('click', (e) => {  // 绑定， 订阅， 注册
+            console.log('app');
+            // e.stopPropagation()
+            // e.stopImmediatePropagation()
+        }, true)
 
-        // wrap.addEventListener('click', () => {
-        //     console.log('wrap');
-        // }, true)
+        wrap.addEventListener('click', () => {
+            console.log('wrap');
+        }, )
 
         box.addEventListener('click', (e) => {
             console.log('box');
