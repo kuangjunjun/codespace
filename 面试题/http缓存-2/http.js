@@ -1,3 +1,4 @@
+const { log } = require('console');
 const http = require('http');
 const url = require('url');
 
@@ -22,7 +23,8 @@ const server = http.createServer((req, res) => {
   const { pathname } = url.parse(`http://${req.headers.host}${req.url}`)
   console.log(pathname);
   if (pathname === '/') {
-    const accept = req.headers.accept
+      const accept = req.headers.accept
+      console.log(accept);
     if (accept.indexOf('application/json') !== -1) {
       res.writeHead(200, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify(responseData))
