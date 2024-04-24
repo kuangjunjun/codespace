@@ -1,39 +1,40 @@
-const http = require('http');
-const url = require('url');
-const path = require('path');
-const fs = require('fs');
-const mime = require('mime-types');
+const http = require('http')
+const url = require('url')// url模块  做字符串url路径的解析
+const path = require('path')// path 解析路径 解析绝对相对
+const fs = require('fs') // 文件模块
+const mime = require('mime-types')
 
-// 前后端不分离，把一个静态资源返回给前端
 const server = http.createServer((req, res) => {
     let filePath = path.resolve(__dirname, path.join('www', url.fileURLToPath(`file:/${req.url}`)))
     if (fs.existsSync(filePath)) {
-        const stats = fs.statSync(filePath)//读取文件的详细参数
-        const isDir = stats.isDirectory()// 用来判断读到的是文件还是文件夹
+        const stats = fs.statSync(filePath)
+        console.log(stats);
+        const isDir = stats.isDirectory()
         if (isDir) {
             filePath = path.join(filePath, 'index.html')
         }
-        // --------------------------------------------------
         if (!isDir || fs.existsSync(filePath)) {
-            // 读取资源文件向前端返回
-            const content = fs.readFileSync(filePath) // 读取文件
+            const content = fs.readFileSync(filePath)
             const { ext } = path.parse(filePath)
-            console.log(ext);
-           
-            res.writeHead(200, {
+            const timeStamp = req.headers['if-modified-since']
+            let status = 200
+            if (timeStamp && Number(timeStamp) === stats.mtimeMs) { // 该资源没有被修改
+                status = 304 // 资源未修改
+            }
+
+            res.writeHead(status, {
                 'Content-Type': mime.lookup(ext),
-                'Cache-control': 'max-age=86400'  // 一天
+                'Cache-Control': 'max-age=86400', // 一天
+                'Last-Modified': stats.mtimeMs  // 时间戳  资源修改的时间
             })
 
-            return res.end(content)
+            return res.end(content) 
         }
     }
-
     res.writeHead(404, { 'Content-Type': 'text/html' })
-    return res.end('<h1>Not Found</h1>')
-
+    res.end('<h1>Not Found</h1>')
 })
 
 server.listen(3000, () => {
-    console.log('server is running at port 3000')
-});
+    console.log('listening on port 3000');
+})
