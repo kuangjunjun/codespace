@@ -17,7 +17,7 @@
         
     </div>
     <script>
-        // 创建一个支持冒泡且不能取消的look事件
+        // 创建一个支持冒泡且能取消的look事件
         let ev = new Event('look', { bubbles: true, cancelable: true })
 
 
@@ -25,9 +25,9 @@
         box.addEventListener('look', (event) => {
             // console.log(event);
             if(event.cancelable){
-                event.preventDefault()
+                event.preventDefault() 
             }else{
-            console.log('在box上触发了look事件');
+                console.log('在box上触发了look事件');
             }
         })
         

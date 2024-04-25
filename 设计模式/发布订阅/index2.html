@@ -18,19 +18,21 @@
     </div>
     <script>
         // 创建一个支持冒泡且不能取消的look事件
-        let ev = new Event('look', { bubbles: true, cancelable: false, composed: true })
+        let ev = new Event('look', { bubbles: true, cancelable: false, composed: false })
+
+        let box = document.getElementById("box")
+
         let boxShadow = box.attachShadow({mode: 'open', delegatesFocus: false})
         boxShadow.innerHTML=`
             <div class = "title"> 我是影子DOM</div>
         `
 
-        let box = document.getElementById("box")
         box.addEventListener('look', (event) => {
             // console.log(event);
             if(event.cancelable){
                 event.preventDefault()
             }else{
-            console.log('在box上触发了look事件');
+                console.log('在box上触发了look事件');
             }
         })
 
