@@ -2,6 +2,7 @@ import Context from './components/Context';
 import Con from './_context';
 import { Button } from 'antd'
 import TodoList from './todo/TodoList';
+import State from './components/State';
 
 // const Con = createContext()
 
@@ -13,7 +14,8 @@ const App = () => {
     //     <Button type='primary'></Button>
     //   </div>
     // </Con.Provider>
-    <TodoList />
+    // <TodoList />
+    <State />
   );
 };
 

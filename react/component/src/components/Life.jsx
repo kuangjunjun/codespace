@@ -20,8 +20,10 @@ export default class Life extends Component {
     }
 
     shouldComponentUpdate() {
-        return false
+        return true
     }
+    
+
 
     componentDidMount() {
         console.log('Life 组件挂载完成', this.ref.current);

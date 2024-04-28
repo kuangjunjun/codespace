@@ -18,9 +18,9 @@ const App = props => {
       {/* <List colors={colors} fn={() => { }} obj={{ name: 'Tom' }} /> */}
       {/* <Page /> */}
 
-      {/* <Life></Life> */}
+      <Life></Life>
 
-      <TodoList />
+      {/* <TodoList /> */}
 
     </div>
   );

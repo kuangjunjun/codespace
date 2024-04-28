@@ -15,7 +15,11 @@ const routes = [
     component: () => import('../views/About.vue'),
     meta: {
       title: '关于我们'
-    }
+    },
+    // beforeEnter: (to, from, next) => {  // 单独的路由守卫
+    //   console.log(to, from);
+    //   next()
+    // }
   }
 ]
 
