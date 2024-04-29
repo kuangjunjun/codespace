@@ -13,7 +13,7 @@ export function myNextTick(fn) {
       console.log(el);
       fn()
     })
-    observer.observe(app, observerOptions) // 监听上某个dom节点及子节点
+    // observer.observe(app, observerOptions) // 监听上某个dom节点及子节点
   
   
   }
