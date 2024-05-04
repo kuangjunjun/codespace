@@ -17,9 +17,9 @@ const refP = ref(null)
 //   console.log(refP.value);
 // })
 
-setTimeout(() => {
-  console.log(refP.value);
-}, 0);
+// setTimeout(() => {
+//   console.log(refP.value);
+// }, 0);
 
 // const updateMsg = () => {
 //   message.value = '更新之后的消息'
