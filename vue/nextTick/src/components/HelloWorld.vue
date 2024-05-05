@@ -24,7 +24,7 @@ const refP = ref(null)
 // const updateMsg = () => {
 //   message.value = '更新之后的消息'
 
-//   console.log(document.querySelector('p'), 'nextTick');
+  console.log(document.querySelector('p'), 'nextTick');
 // }
 
 // nextTick(() => {
