@@ -1,11 +1,10 @@
 <template>
-  <!-- <List msg="Vite + Vue" /> -->
-  <HelloWorld />
+  <List msg="Vite + Vue" />
 </template>
 
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import List from './components/List.vue'
 </script>
 
 

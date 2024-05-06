@@ -15,5 +15,4 @@ export function myNextTick(fn) {
     })
     observer.observe(app, observerOptions) // 监听上某个dom节点及子节点
   
-  
   }
