@@ -51,3 +51,25 @@
     暂时性死区  变量提升的问题
 
 - 深入， 验证下我们的能力 
+
+
+- 项目做了有过后端的东西吗？
+
+    - 基于KOA  api  为前端应用提供API服务
+        MVC + router + SQL + JSON
+    - JWT
+
+    - MVC 经典设计模式分层
+        Vue MVVM
+        /posts/1  Get  restful 一切皆是资源
+        /posts  POST  发布
+        /posts/1  DELETE
+        首先，用户从url路由进来，参数校验/业务逻辑交给controller（控制器），
+        controller 实例化相应数据表模型，完成数据操作（增删改查）model
+        最后将Model层返回的数据以JSON格式响应给用户
+
+    M Model  数据表的映射
+    V View   html 模板
+    Controller  控制器  校验和一些业务
+
+    View  不可以直接操作Model 层  controller 才安全

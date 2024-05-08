@@ -1,7 +1,8 @@
-const { reject } = require("async");
+
 
 function A() {
     return new Promise((resolve, reject) => {
+        console.log(1);
         setTimeout(() => {
             console.log('异步A完成');
             resolve()
@@ -35,3 +36,4 @@ async function foo() {
 }
 
 foo()
+console.log(2);
