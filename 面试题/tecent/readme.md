@@ -73,3 +73,26 @@
     Controller  控制器  校验和一些业务
 
     View  不可以直接操作Model 层  controller 才安全
+
+- 中间件 middleware 洋葱模型
+    node的应用运行方式
+    中间件的本质是函数
+    - cors
+    - jsonParser() post
+    - 鉴权中间件
+    - 路由中间健
+    - 错误处理中间件
+    以post 功能模块为例
+    /posts  GET 进来想要获得文章列表
+    我们可以安排 sort 中间件 负责排序
+    filter 中间件 负责条件筛选
+    paginate中间件 负责分页
+    最后再交给控制器函数去处理， 将中间件的思想执行到底
+    post.middleware.ts 文件内
+    router.get(
+    '/posts',
+    filter,
+    sort,
+    paginate,
+    postController.index
+)
