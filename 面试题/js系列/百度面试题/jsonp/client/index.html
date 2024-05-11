@@ -13,7 +13,7 @@
     <script>
         
 
-        function jsonp(url, params, cb){
+        function jsonp(url, cb){
             return new Promise((resolve, reject) => {
                 const script = document.createElement('script');
                 script.src = `${url}?cb=${cb}` // http://localhost:3000?cb=`callback`
@@ -34,7 +34,7 @@
             // 发请求
             jsonp('http://localhost:3000', 'callback')
             .then(res => {
-                console.log('后端返回的结果' + res);
+                console.log('后端返回的结果:' + res);
             })
         });
     </script>
