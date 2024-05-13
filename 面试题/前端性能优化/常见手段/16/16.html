@@ -29,7 +29,7 @@
         render.onload = (e) => {
           const imageData = e.target.result
 
-          // 再开一个线程
+          // 在开一个线程
           const worker = new Worker('worker.js')
 
           createImageBitmap(new Blob([imageData])).then(imageBitmap => {
