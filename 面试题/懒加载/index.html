@@ -33,7 +33,7 @@
           imgs.forEach(el => {
             let rect = el.getBoundingClientRect() // 获取容器的几何信息
             if (rect.top < viewHeight) {
-              let image = new Image()
+              // let image = new Image()
               image.src = el.dataset.original
               image.onload = function() {
                 el.src = image.src
