@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openDB()">打开数据库</button>
+
+    <script>
+        let db = null
+        function openDB(){
+            // 打开数据库
+            db = openDatabase('juejin_course', '1.0', 'Juejin Course Database', 2 * 1024 * 1024)
+            db && alert(`数据库 juejin_course 打开了`)
+        }
+    </script>
+</body>
+</html>

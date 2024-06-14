@@ -3,6 +3,7 @@ var todoData = []
 var addTodo = document.querySelector('.btn')  // 按钮
 var todoList = document.getElementById('todo-list')
 
+
 function addNewTodo() {
     // 获取input中的内容
     if (document.getElementById('newTodo').value.trim() !== '') {

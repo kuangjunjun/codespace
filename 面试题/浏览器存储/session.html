@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="save">保存</button>
+    <button id="get">读取</button>
+    <button id="del">删除</button>
+    <button id="clear">清空</button>
+
+    <script>
+        const user = {
+            name: '笑笑',
+            age: 18
+        }
+
+        document.getElementById('save').addEventListener('click', function(){
+            sessionStorage.setItem('userInfo', JSON.stringify(user))
+        })
+
+        document.getElementById('get').addEventListener('click', function(){
+           console.log(JSON.parse(sessionStorage.getItem('userInfo')));
+        })
+
+        document.getElementById('del').addEventListener('click', function(){
+            sessionStorage.removeItem('userInfo')
+        })
+
+        document.getElementById('clear').addEventListener('click', function(){
+           sessionStorage.clear()
+        })
+    </script>
+</body>
+</html>

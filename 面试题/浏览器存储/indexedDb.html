@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openDB()">打开数据库</button>
+    <button onclick="createDB()">新建数据库</button>
+    <button onclick="insertOneDB()">插入一条数据</button>
+    <button onclick="insertMultiDB()">插入多条数据</button>
+    <button onclick="queryDB()">查询数据</button>
+    <button onclick="updateDB()">更新数据</button>
+    <div id="table"></div>
+
+    <script>
+        const dbName = 'users'
+        const dbVersion = 1.0
+
+        function openDB(){
+            const request = indexedDB.open(dbName, dbVersion)
+            request.onerror = function(){
+                console.log('无法打开数据库');
+            }
+            request.onupgradeneeded = function(event){
+                console.log(123);
+                const db = event.target.result
+                // 创建一个表
+                const objectStore = db.createObjectStore('sex', {keyPath: 'id'})
+                objectStore.craeteIndex('title', 'title', {unique: true})
+            }
+            request.onsuccess = function(event){
+                // console.log(event);
+                const db = event.target.result
+                console.log(`数据库 ${db.name} 已经开启`);
+            }
+        }   
+    </script>
+</body>
+</html>
