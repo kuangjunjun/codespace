@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="https://s1.music.126.net/style/favicon.ico">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <audio id="j-bgm" src="./assets/bgm.mp3"></audio>
+    <div class="music-btn off"></div>
+
+    <div class="view">
+        <div class="sun"></div>
+        <!-- 秋千 -->
+        <div class="art">
+            <div class="swing">
+                <div class="leg2">
+                    <div class="jiojio"></div>
+                </div>
+                <div class="leg1">
+                    <div class="jiojio"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 播放音乐
+        var musicBtn = document.querySelector('.music-btn');
+        var bgMusic = document.getElementById('j-bgm');
+        var defaultMusicPlay = true
+
+        musicBtn.addEventListener('click', function(){
+            if(defaultMusicPlay){
+                bgMusic.play()
+            }else{
+                bgMusic.pause()
+            }
+            musicBtn.classList.toggle('off')
+            defaultMusicPlay = !defaultMusicPlay
+        })
+
+
+    </script>
+</body>
+</html>

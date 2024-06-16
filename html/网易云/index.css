@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.music-btn{
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    width: 40px;
+    height: 40px;
+    background: url(./assets/close.png);
+    background-size: cover;
+    z-index: 999;
+}
+.music-btn.off{
+    background-image: url(./assets/music.png);
+}
+.view{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: linear-gradient(60deg, #f8ddd1, #faece5 73%, #fad2c0);
+}
+.sun{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 283px;
+    height: 283px;
+    background: url(https://s5.music.126.net/static_public/5c21db8d4684556c72180904/sun.a3f575ae2fef2cfdae15011e6081a094.png);
+    background-size: cover;
+    transform: translate(-50%,-50%);
+}
+.art{
+    position: absolute;
+    top: -140px;
+    right: 0;
+    width: 750px;
+    height: 1334px;
+    transform: scale(0.5);
+    transform-origin: top right;
+}
+.swing{
+    position: absolute;
+    left: 226px;
+    top: -180px;
+    width: 478px;
+    height: 1038px;
+    background: url(https://s5.music.126.net/static_public/5c21db8d4684556c72180904/swing.88545d6c8e1ac798465e367f8e5357ab.png);
+    transform-origin: -16% -30%;
+    animation: ani_qiuqian 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes ani_qiuqian{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(32deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+.leg2{
+    position: absolute;
+    left: 185.375px;
+    top: 958px;
+    width: 130px;
+    height: 32px;
+    background: url(https://s5.music.126.net/static_public/5c21db8d4684556c72180904/leg2.d7bc44a91b6974450f2ccc430846c63d.png);
+    transform-origin: 91.15% 33.59%;
+    animation: ani_leg2 8s ease infinite;
+}
+@keyframes ani_leg2{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-87deg);
+    }
+    50%{
+        transform: retate(0deg);
+    }
+    75%{
+        transform: rotate(-87deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.leg2 .jiojio{
+    width: 57px;
+    height: 44px;
+    background: url(https://s5.music.126.net/static_public/5c21db8d4684556c72180904/leg2-part.8f70bb7fc789a70bc78c48aa7718a765.png);
+    left: -27.75px;
+    top: -10.5px;
+    position: absolute;
+}
