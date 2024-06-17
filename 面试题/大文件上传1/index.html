@@ -71,7 +71,7 @@
 
           console.log(formateList);
 
-          formateList.map(({ formData, index }) => { // 发接口请求
+          const requestList = formateList.map(({ formData, index }) => { // 发接口请求
             requestUpload({
               url: 'http://localhost:3000/upload',
               data: formData,
@@ -79,6 +79,19 @@
             })
           })
 
+          // 发送合并切片的请求
+          Promise.all(requestList).then(mergeChunk)
+
+        }
+
+        // 合并切片
+        const mergeChunk = () => {
+            requestUpload({
+                url: 'http://localhost:3000/merge',
+                data: {
+                    fileName: uploadFile.value.name
+                }
+            })
         }
 
 
