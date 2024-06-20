@@ -4,8 +4,8 @@ let arr = [1, 1, '2', 3, 1, 2,
     { name: '张三', id: { n: 2 } },
 ]
 
-// let newArr = [...new Set(arr)]  // ===    { name: '张三', id: {n: 1} } === { name: '张三', id: {n: 1} }
-// console.log(newArr);
+let newArr = [...new Set(arr)]  // ===    { name: '张三', id: {n: 1} } === { name: '张三', id: {n: 1} }
+console.log(newArr);
 
 // let arr2 = arr.map((item) => {
 //     return JSON.stringify(item)
