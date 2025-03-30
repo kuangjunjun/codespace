@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: 50px;
+        }
+        .box1{
+            background-color: #f80303;
+            /* height: 200px; */
+        }
+        .box2{
+            background-color: #ea490e;
+            /* height: 200px; */
+        }
+        .box3{
+            background-color: green;
+            /* height: 200px; */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper"> 
+        <div class="box1">一</div>
+        <div class="box2">二</div>
+        <div class="box3">三</div>
+        <div class="box2">四</div>
+        <div class="box1">五</div>
+        <div class="box2">四</div>
+        <div class="box3">四</div>
+    </div>
+</body>
+</html>

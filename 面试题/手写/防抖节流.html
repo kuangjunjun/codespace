@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="bt">发送（防抖）</button>
+    <button id="bt1">发送（节流）</button>
+    <script>
+        let bt = document.getElementById('bt');
+        let bt1 = document.getElementById('bt1');
+        bt.addEventListener('click', debounce(send, 1000))
+        bt1.addEventListener('click', throttle(send, 3000))
+
+        function debounce(fn, delay){
+            let timer;
+            return function(...args){
+                let _this = this;
+                if(timer) clearTimeout(timer);
+                timer = setTimeout(function(){
+                    fn.apply(_this, args)
+                }, delay)
+            }
+        }
+
+        function throttle(fn, delay){
+            let prevTime = Date.now()
+            return function(...args){
+                let _this = this;
+                if(Date.now() - prevTime > delay){
+                    fn.apply(_this, args)
+                    prevTime = Date.now()
+                }
+            }
+        }
+
+        function send(){
+            console.log('已发送');
+        }
+    </script>
+</body>
+</html>
