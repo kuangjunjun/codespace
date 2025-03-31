@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="login()"> 登录 </button>
+  <button onclick="home()"> 主页 </button>
+
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  <script>
+    axios.defaults.baseURL = 'http://localhost:3000'
+    axios.defaults.withCredentials = true  // 允许携带cookie
+
+    function login() {
+      axios.post('/login', {
+        username: 'admin',
+        password: '123'
+      }).then(res => {
+        console.log(res)
+      })
+    }
+
+    function home() {
+      axios.get('/home', { withCredentials: true }).then(res => {
+        console.log(res)
+      })
+    }
+  </script>
+</body>
+
+</html>
